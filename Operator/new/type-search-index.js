@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"<Unnamed>","l":"AdditionDoc"},{"l":"All Classes and Interfaces","u":"allclasses-index.html","k":"18"}];updateSearchResults();
