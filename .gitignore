@@ -1,0 +1,15 @@
+# Java compiled files
+*.class
+
+# Build folders
+/build/
+/out/
+/bin/
+
+# IntelliJ
+.idea/
+*.iml
+
+# Android Studio
+.gradle/
+local.properties
