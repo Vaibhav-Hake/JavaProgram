@@ -10,10 +10,13 @@ class Personal{
 		sc.nextLine();
 		System.out.println("Enter your phone NO ");
 		long ph=sc.nextLong();
+		sc.nextLine();
 		System.out.println("Enter your clgname ");
 		String clg=sc.nextLine();
+		
 		System.out.println("Enter your cgpa ");
 		int cgpa=sc.nextInt();
+		sc.nextLine();
 		System.out.println("Enter your native place ");
 		String nplace=sc.next();
 		System.out.println("Enter your Branch ");
