@@ -12,7 +12,8 @@ class MinFreqDigit{
 				f=c;
 			}
 		}
-		System.out.println(d+""+f);
+		System.out.println(d+" 
+		s: "+f);
 	}
 	public static int freq(int num,int i){
 		int cnt=0;
