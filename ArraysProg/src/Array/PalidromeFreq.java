@@ -1,8 +1,7 @@
 package Array;
 
-import java.util.Arrays;
 import java.util.Scanner;
-public class ReplaceDup0 {
+public class PalidromeFreq {
 	public static void main(String[]args) {
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter a Size of array ");
@@ -16,24 +15,34 @@ public class ReplaceDup0 {
 		sc.close();
 	}
 	public static void printFreq(int []a) {
-		
 		boolean [] visited=new boolean[a.length];
 		for(int i=0;i<a.length;i++) {
-			if(visited[i]) {
+			if(visited[i]||!(isPalidrome(a[i]))) {
 				continue;
 			}
+			int ct=1;
 			for(int j=i+1;j<a.length;j++) {
 				if(a[i]==a[j]) {
-					a[j]=0;
+					ct++;
 					visited[j]=true;
 				}
 			}
-			
+			System.out.println(a[i]+" --> "+ct);
 		}
-		System.out.println(Arrays.toString(a));
-		
 		
 	}
+	public static int rev(int n) {
+		int rev=0;
+		while(n!=0) {
+			rev=rev*10+n%10;
+			n/=10;
+		}
+		return rev;
+	}
+	public static boolean isPalidrome(int n) {
+		return n==rev(n);
+	}
+
 	
 	
 
