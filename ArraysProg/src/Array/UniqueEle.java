@@ -1,7 +1,7 @@
 package Array;
 
 import java.util.Scanner;
-public class FreqElement {
+public class UniqueEle {
 	public static void main(String[]args) {
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter a Size of array ");
@@ -27,7 +27,9 @@ public class FreqElement {
 					visited[j]=true;
 				}
 			}
-			System.out.println(a[i]+" --> "+ct);
+			if(ct==1) {
+				System.out.println(a[i]);
+			}
 		}
 		
 	}
