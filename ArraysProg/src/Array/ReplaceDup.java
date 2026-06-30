@@ -1,7 +1,8 @@
 package Array;
 
+import java.util.Arrays;
 import java.util.Scanner;
-public class CountUnique {
+public class ReplaceDup {
 	public static void main(String[]args) {
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter a Size of array ");
@@ -15,24 +16,22 @@ public class CountUnique {
 		sc.close();
 	}
 	public static void printFreq(int []a) {
-		int total=0;
+		
 		boolean [] visited=new boolean[a.length];
 		for(int i=0;i<a.length;i++) {
 			if(visited[i]) {
 				continue;
 			}
-			int ct=1;
 			for(int j=i+1;j<a.length;j++) {
 				if(a[i]==a[j]) {
-					ct++;
+					a[j]=-1;
 					visited[j]=true;
 				}
 			}
-			if(ct==1) {
-				total++;
-			}
+			
 		}
-		System.out.println(total);
+		System.out.println(Arrays.toString(a));
+		
 		
 	}
 	
