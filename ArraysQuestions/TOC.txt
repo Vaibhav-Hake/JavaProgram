@@ -1,0 +1,21 @@
+Implemented so far (1-20+):
+1 SumOfAllElements
+2 AverageOfArrayElements
+3 SumOfEvenElements
+4 SumOfOddElements
+5 SumOfFirstThreeElements
+6 SumOfLastThreeElements
+7 SumOfPositiveElements
+8 SumOfNegativeElements
+9 SumOfElementsAtEvenIndex
+10 SumOfElementsAtOddIndex
+11 AverageOfEvenElements
+12 AverageOfOddElements
+14 MiddleElementOfArray
+15 ProductOfAllElements
+18 ReverseArray
+19 PrintEvenElements
+20 PrintOddElements
+21 PrintOnlyPositiveElements
+22 PrintOnlyNegativeElements
+

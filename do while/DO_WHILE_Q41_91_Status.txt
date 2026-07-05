@@ -1,0 +1,1 @@
+Status: need to implement Q41–Q91 in do-while folder (char[] digit/reverse/index/case/special/digits etc., then Q73–Q76 divisible by 3/4, Q77–Q91 prime/perfect/harshad/spy/neon/strong/armstrong/happy/factorial even/odd/palindrome/sunny/perfect square/disarium).

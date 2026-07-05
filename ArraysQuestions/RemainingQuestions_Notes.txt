@@ -1,0 +1,12 @@
+Need to generate Java files for the remaining questions (3/40 not all covered).
+
+Already created (approx):
+1..12, 14, 15, 18..22
+
+Missing from your list:
+13 has 2 parts (check middle or not + print middle element) -> already print middle implemented as Q14; still need Q13 (check).
+16,17 (product of even, product of odd)
+23..40 (buzz number, non-zero, divisible by 3/4 checks, sum/product if divisible by 3/4, single digit, two digit, three digit, char input + print char arrays, vowels/consonants/uppercase/lowercase/special/alphabet)
+
+Also: need to ensure no package declarations, and each file has matching public class name.
+

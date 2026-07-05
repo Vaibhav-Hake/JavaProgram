@@ -1,0 +1,3 @@
+Batch1: starting creation of DO-WHILE solutions for Q41–Q91.
+Next: create Q41–Q50 char[] related solutions, then Q51–Q57 already present, then Q58+.
+

@@ -1,0 +1,10 @@
+Goal: create DO-WHILE solutions for Q41–Q91 in this folder.
+
+Planned batches:
+1) Q41–Q50 (char[] digits/reverse/index/case/special for while equivalents converted to do-while)
+2) Q58–Q64 (remaining char[] digit/case/special related tasks + any missing numeric helpers)
+3) Q66–Q88 (prime/perfect/Harshad/spy/neon/strong/Armstrong/happy/factorial even/odd/palindrome)
+4) Q89–Q91 (sunny / perfect square / disarium)
+
+Important: remove/ignore placeholder text files; only .java files are valid solutions.
+
