@@ -1,6 +1,7 @@
 package Array;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class ArrayPermutation {
  public static void main(String[]args) {
@@ -20,6 +21,10 @@ public class ArrayPermutation {
  }
  public static void swap(int[]a,int i,int j) {
 	 int temp=a[i];
+	    
+	 
+	 
+	 //Swap logic
 	 a[i]=a[j];
 	 a[j]=temp;
  }
