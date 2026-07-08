@@ -1,5 +1,5 @@
 package Array;
-
+//Similar any element 
 public class SecondHighFreq {
 public static void main(String[]args) {
 	int[]a= {1,2,1,2,1,6,4,5,3,3,2};
