@@ -14,7 +14,7 @@ public static void kthMissing(int[]a) {
 	for(int i=0;i<a.length;i++) {
 		v[a[i]]=true;
 	}
-
+  
 	for(int i=min;i<=max;i++) {
 		if(!v[i]) {
 			System.out.println(i);
