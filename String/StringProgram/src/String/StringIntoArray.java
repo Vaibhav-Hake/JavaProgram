@@ -15,11 +15,7 @@ public class StringIntoArray {
 	public char[] toCharrArray() {
 		return value;
 	}
-	@Override
-	public String toString() {
-		return new String(value);
-		
-	}
+	
 	public static void main(String[] args) {
 		String s=new String("Java");
 		char []ch=s.toCharArray();
