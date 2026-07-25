@@ -22,7 +22,7 @@ class Bank{
 			System.out.println("Enter a option : ");
 			int op=getScannerInstance().nextInt();
 			
-			switch(op){
+			switch(op  ){
 				case 1 -> creatAcc();
 				case 2 -> login();
 				default -> System.out.println("\n Invalid Option \n");
