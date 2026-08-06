@@ -1,4 +1,5 @@
 class LeetCode1678 {
+	//here we use String Builder for optimization
     public static  String interpret(String command) {
          //String res="";
 		  StringBuilder res=new StringBuilder();
