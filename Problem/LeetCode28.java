@@ -13,6 +13,6 @@ class LeetCode28 {
       return -1;   
     }
 		public static void main(String[]args){
-		System.out.println( strStr("sadiamsad","sdhgdgdgad"));
+		System.out.println( strStr("sadiamsad","sdhgdyguyjfgdgad"));
 	}
 }
