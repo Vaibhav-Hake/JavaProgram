@@ -11,7 +11,7 @@ class LeetCode2108 {
     public static  boolean isPalidrome(String a){
         int i=0,j=a.length()-1;
         while(i<=j){
-            if(a.charAt(i)!=a.charAt(j)){
+            if(a.charAt(i  )!=a.charAt(j)){
                 return false;
             }
             i++;
