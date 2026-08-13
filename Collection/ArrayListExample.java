@@ -75,7 +75,7 @@ class MyArrayList <E>{
 		if(indx<0||indx>=size()){
 			throw new UserIndexOutOfBoundException("Index "+indx+" out of bounds for length "+size());
 		}
-		return this.arr[index];
+		return this.arr[indx];
 	}
 	
 	public E removeLast(){
@@ -89,6 +89,14 @@ class MyArrayList <E>{
 	
 	public int indexOf(E ele){
 		for(int i =0;i<size();i++){
+			if(arr[i].equals(ele)){
+				return i;
+			}
+		}
+		return -1;
+	}
+	public int lastIndexOf(E ele){
+		for(int i =size()-1;i>=0;i--){
 			if(arr[i].equals(ele)){
 				return i;
 			}
@@ -122,6 +130,7 @@ class ArrayListExample {
 		list1.addLast(50);
 		System.out.println(list1);
 		System.out.println(list1.indexOf(20));
+		System.out.println(list1.lastIndexOf(20));
 		System.out.println(list1.isEmpty());
 		//System.out.println(list1.get(-1));
 		System.out.println(list1.contains(141));
@@ -141,6 +150,7 @@ class ArrayListExample {
 		System.out.println(list2.get(4));
 		System.out.println(list2.removeLast());
 		System.out.println(list2.indexOf(150));
+		System.out.println(list2.lastIndexOf(50));
 		System.out.println(list2);
 		//System.out.println(list2.get(-4));
 	}
