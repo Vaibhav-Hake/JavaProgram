@@ -4,6 +4,11 @@ class UserIndexOutOfBoundException extends RuntimeException{
 		super(desc);
 	}
 }
+class UserNoSuchElementException extends RuntimeException{
+	public UserNoSuchElementException(){
+		super();
+	}
+}
 class MyArrayList <E>{
 	private E[] arr;
 	private int index;
@@ -72,6 +77,24 @@ class MyArrayList <E>{
 		}
 		return this.arr[index];
 	}
+	
+	public E removeLast(){
+		if(size()==0)
+			throw new UserNoSuchElementException();
+		E temp=this.arr[size()-1];
+		this.arr[size()-1]=null;
+		index--;
+		return temp;
+	}
+	
+	public int indexOf(E ele){
+		for(int i =0;i<size();i++){
+			if(arr[i].equals(ele)){
+				return i;
+			}
+		}
+		return -1;
+	}
 	@Override
 	public String toString(){
 		if(size()==0)return "[]";
@@ -98,6 +121,7 @@ class ArrayListExample {
 		list1.addFirst(140);
 		list1.addLast(50);
 		System.out.println(list1);
+		System.out.println(list1.indexOf(20));
 		System.out.println(list1.isEmpty());
 		//System.out.println(list1.get(-1));
 		System.out.println(list1.contains(141));
@@ -115,6 +139,9 @@ class ArrayListExample {
 		System.out.println(list2.capacity());
 		System.out.println(list2.contains(40));
 		System.out.println(list2.get(4));
-		System.out.println(list2.get(-4));
+		System.out.println(list2.removeLast());
+		System.out.println(list2.indexOf(150));
+		System.out.println(list2);
+		//System.out.println(list2.get(-4));
 	}
 }
