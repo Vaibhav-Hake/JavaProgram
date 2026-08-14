@@ -127,6 +127,23 @@ class MyArrayList <E>{
 		return temp;
 	}
 	
+	public E remove(int index){
+		checkIndex(index);
+		E temp=this.arr[index];
+		for(int i=index+1;i<size();i++){
+			this.arr[i-1]=this.arr[i];
+		}
+		this.index--;
+		return temp;
+	}
+	public void trimToSize(){
+		if(this.arr.length==size()) return ;
+		E[]newArr=(E[])new Object[this.size()];
+		for(int i=0;i<size();i++){
+			newArr[i]=this.arr[i];
+		}
+		this.arr=newArr;
+	}
 	public int indexOf(E ele){
 		for(int i =0;i<size();i++){
 			if(arr[i].equals(ele)){
@@ -142,6 +159,27 @@ class MyArrayList <E>{
 			}
 		}
 		return -1;
+	}
+	
+	public E set(int index,E ele){
+		checkIndex(index);
+		E temp=this.arr[index];
+		arr[index]=ele;
+		return temp;
+		
+	}
+	public void clear(){
+		if(isEmpty()) return ;
+		for(int i=0;i<size();i++){
+			this.arr[i]=null;
+		}
+		this.index=0;
+	}
+	@Override
+	public boolean equals(Object obj){
+		if(!(this instanceof MyArrayList)) return false;
+		
+		return this.hashCode()==obj.hashCode();
 	}
 	@Override
 	public String toString(){
@@ -198,6 +236,12 @@ class ArrayListExample {
 		//System.out.println(list2.getFirst());
 		//System.out.println(list2.getLast());
 		
+		//System.out.println(list2.capacity());
+		//list2.trimToSize();
+		//System.out.println(list2.capacity());
+		System.out.println(list2);
+		System.out.println(list2.remove(5));
+		list2.clear();
 		System.out.println(list2);
 	}
 }
