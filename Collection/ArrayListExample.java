@@ -16,6 +16,15 @@ class MyArrayList <E>{
 	public MyArrayList(){
 		this.arr=(E[])new Object[INITIAL_CAPACITY];
 	}
+	public MyArrayList(int newCAp){
+		this.arr=(E[])new Object[newCAp];
+	}
+	public MyArrayList(MyArrayList coll){
+		this.arr=(E[])new Object[coll.size()];
+		for(int i=0;i<this.arr.length;i++){
+			this.arr[i]=(E)coll.get(i);
+		}
+	}
 	
 	public int size(){
 		return this.index;
@@ -27,13 +36,22 @@ class MyArrayList <E>{
 		return size()==0;
 	}
 	
-	public boolean add(E ele){
-		if(size()==this.arr.length){
-			E[]newArray=(E[])new Object[newCapcity(this.arr.length)];
-			for(int i=0;i<arr.length;i++){
+	public E[] creatNewArray(int oldLen){
+		E[]newArray=(E[])new Object[newCapcity(oldLen)];
+			for(int i=0;i<size();i++){
 				newArray[i]=arr[i];
 			}
-			this.arr=newArray;
+			return newArray;
+	}
+	public void checkIndex(int indx){
+		if(indx<0||indx>=size()){
+			throw new UserIndexOutOfBoundException("Index "+indx+" out of bounds for length "+size());
+		}
+	}
+	 
+	public boolean add(E ele){
+		if(size()==this.arr.length){
+			this.arr=creatNewArray(this.arr.length);
 		}
 		this.arr[this.index]=ele;
 		this.index++;	
@@ -46,16 +64,24 @@ class MyArrayList <E>{
 	
 	public void addFirst(E ele){
 		if(size()==this.arr.length){
-			E[] newArray=(E[])new Object[newCapcity(this.arr.length)];
-			for(int i=0;i<arr.length;i++){
-				newArray[i]=arr[i];
-			}
-			this.arr=newArray;
+			
+			this.arr=creatNewArray(this.arr.length);
 		}
 		for(int i=size()-1;i>=0;i--){
 			arr[i+1]=this.arr[i];
 		}
 		arr[0]=ele;
+		index++;
+	}
+	public void add(int index,E ele){
+		checkIndex(index);
+		if(size()==this.arr.length){
+			this.arr=creatNewArray(this.arr.length);
+		}
+		for(int i=size()-1;i>=index;i--){
+			arr[i+1]=arr[i];
+		}
+		arr[index]=ele;
 		index++;
 	}
 	public int capacity(){
@@ -72,12 +98,20 @@ class MyArrayList <E>{
 		return false;
 	}
 	public E get(int indx){
-		if(indx<0||indx>=size()){
-			throw new UserIndexOutOfBoundException("Index "+indx+" out of bounds for length "+size());
-		}
+		checkIndex(indx);
 		return this.arr[indx];
 	}
-	
+	public E removeFirst(){
+		if(size()==0){
+			throw new UserNoSuchElementException();
+		}
+		E temp=this.arr[0];
+		for(int i=1;i<size();i++){
+			arr[i-1]=arr[i];
+		}
+		index--;
+		return temp;
+	}
 	public E removeLast(){
 		if(size()==0)
 			throw new UserNoSuchElementException();
@@ -122,9 +156,9 @@ class ArrayListExample {
 	public static void main(String[]args){
 		ArrayList<Integer> list1=new ArrayList<Integer>();
 		
-		list1.add(10);
-		list1.add(20);
-		list1.add(30);
+		//list1.add(10);
+		//list1.add(20);
+		/**list1.add(30);
 		list1.add(40);
 		list1.addFirst(140);
 		list1.addLast(50);
@@ -133,7 +167,7 @@ class ArrayListExample {
 		System.out.println(list1.lastIndexOf(20));
 		System.out.println(list1.isEmpty());
 		//System.out.println(list1.get(-1));
-		System.out.println(list1.contains(141));
+		System.out.println(list1.contains(141));**/
 	
 		MyArrayList<Integer> list2=new MyArrayList<Integer>();
 		list2.add(10);
@@ -144,14 +178,17 @@ class ArrayListExample {
 		list2.addLast(60);
 		list2.addFirst(70);
 		System.out.println(list2);
-		System.out.println(list2.isEmpty());
-		System.out.println(list2.capacity());
-		System.out.println(list2.contains(40));
-		System.out.println(list2.get(4));
-		System.out.println(list2.removeLast());
-		System.out.println(list2.indexOf(150));
-		System.out.println(list2.lastIndexOf(50));
-		System.out.println(list2);
+		//System.out.println(list2.isEmpty());
+		//System.out.println(list2.capacity());
+		//System.out.println(list2.contains(40));
+		//System.out.println(list2.get(4));
+		//System.out.println(list2.removeLast());
+		//System.out.println(list2.indexOf(150));
+		//System.out.println(list2.lastIndexOf(50));
+		//System.out.println(list2);
 		//System.out.println(list2.get(-4));
+		//list2.add(2,100);
+		//System.out.println(list2.removeFirst());
+		System.out.println(list2);
 	}
 }
