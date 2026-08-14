@@ -101,6 +101,12 @@ class MyArrayList <E>{
 		checkIndex(indx);
 		return this.arr[indx];
 	}
+	public E getFirst(){
+		return get(0);
+	}
+	public E getLast(){
+		return get(size()-1);
+	}
 	public E removeFirst(){
 		if(size()==0){
 			throw new UserNoSuchElementException();
@@ -189,6 +195,9 @@ class ArrayListExample {
 		//System.out.println(list2.get(-4));
 		//list2.add(2,100);
 		//System.out.println(list2.removeFirst());
+		//System.out.println(list2.getFirst());
+		//System.out.println(list2.getLast());
+		
 		System.out.println(list2);
 	}
 }
