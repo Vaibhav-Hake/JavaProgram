@@ -17,7 +17,7 @@ public static void print(String s) {
 			if(chs>='a'&&chs<='z') {
 				chs=(char)(chs+32);
 			}
-			res  
+			//res  
 		}
 	}
 }

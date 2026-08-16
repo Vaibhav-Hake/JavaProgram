@@ -9,7 +9,7 @@ class UserNoSuchElementException extends RuntimeException{
 		super();
 	}
 }
-class MyArrayList <E>{
+class MyArrayList <E> implements Cloneable{
 	private E[] arr;
 	private int index;
 	private  final int INITIAL_CAPACITY=10;
@@ -136,6 +136,15 @@ class MyArrayList <E>{
 		this.index--;
 		return temp;
 	}
+	public boolean remove(Object ele){
+		E temp=(E)ele;
+		int index=this.indexOf(temp);
+		if(index!=-1){
+			remove(index);
+			return true;
+		}
+		return false;
+	}
 	public void trimToSize(){
 		if(this.arr.length==size()) return ;
 		E[]newArr=(E[])new Object[this.size()];
@@ -175,6 +184,25 @@ class MyArrayList <E>{
 		}
 		this.index=0;
 	}
+	public Object[] toArray(){
+		Object[]newArr=new Object[this.size()];
+        for(int i=0;i<size();i++){
+			newArr[i]=this.arr[i];
+		}
+		return newArr;
+	}
+	
+	public <T> T[] toArray(T[] newArray){
+		T[]newArr=(T[])new Object[newArray.length];
+        for(int i=0;i<this.size();i++){
+			newArr[i]=(T)this.arr[i];
+		}
+		return newArr;
+	}
+	@Override
+	public Object clone() throws CloneNotSupportedException{
+		return super.clone();
+	}
 	@Override
 	public boolean equals(Object obj){
 		if(!(this instanceof MyArrayList)) return false;
@@ -197,7 +225,7 @@ class MyArrayList <E>{
 }
 
 class ArrayListExample {
-	public static void main(String[]args){
+	public static void main(String[]args) throws CloneNotSupportedException{
 		ArrayList<Integer> list1=new ArrayList<Integer>();
 		
 		//list1.add(10);
@@ -239,9 +267,12 @@ class ArrayListExample {
 		//System.out.println(list2.capacity());
 		//list2.trimToSize();
 		//System.out.println(list2.capacity());
+		//System.out.println(list2);
+		//System.out.println(list2.remove(5));
+		//list2.clear();
 		System.out.println(list2);
-		System.out.println(list2.remove(5));
-		list2.clear();
-		System.out.println(list2);
+		System.out.println(list2.clone());
+		//System.out.println(list2.toArray());
+		//System.out.println(list2.toArray());
 	}
 }
