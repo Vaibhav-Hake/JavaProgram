@@ -33,7 +33,7 @@ public static void main(String[] args) throws InterruptedException {
 	 Thread.sleep(2000);
 	 driver.findElement(By.id("Password")).sendKeys("Vaibhav@14");
 	 Thread.sleep(2000);
-	 driver.findElement(By.className("button-1 login-button")).click();
+	 driver.findElement(By.className("login-button")).click();
 	 
 	 
 	 driver.close();
