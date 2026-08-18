@@ -19,7 +19,7 @@ public static void main(String[] args) throws InterruptedException {
 	 driver.findElement(By.className("ico-wishlist")).click();
 	 Thread.sleep(2000);
 	 
-	 driver.close();
+	 driver.close(); 
      
 }
 }
