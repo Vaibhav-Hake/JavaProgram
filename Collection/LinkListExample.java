@@ -60,7 +60,7 @@ class UserLinkedList<E>implements UserLinkedList1<E>{
 			head=newNode;
 			
 		}
-		this.index++;
+		this.index++; 
 	}
 	public boolean offerFirst(E e){
 		addFirst(e);
@@ -319,6 +319,26 @@ class UserLinkedList<E>implements UserLinkedList1<E>{
 		}
 		return newArray;
 	}
+	
+	public UserLinkedList<E> reversed(){
+		UserLinkedList<E> rev=new UserLinkedList<>();
+		for(int i=size()-1;i>=0;i--){
+			rev.addLast(this.get(i));
+		}
+		return rev;
+	}
+	
+	public void addAll(UserLinkedList c){
+		for(int i=0;i<c.size();i++){
+			this.addLast((E)c.get(i))
+		}
+	}
+	
+	public void addAll(int indx,UserLinkedList c){ 
+		for(int i=0;i<c.size();i++){
+			this.addLast((E)c.get(i))
+		}
+	}
 	@Override
 	public Object clone()throws CloneNotSupportedException{
 		return super.clone();
@@ -368,8 +388,9 @@ class LinkListExample{
 		//list2.add(3,500);
 		//System.out.println(list2.removeFirstOcurrance(30));
 		//System.out.println(list2.removeLastOcurrance(30));
-		System.out.println(list2.remove(30));
+		//System.out.println(list2.remove(30));
 		System.out.println(list2);
+		System.out.println(list2.reversed());
 		//System.out.println(list2.lastIndexOf(30));
 		//System.out.println(list2.lastIndexOf(3000));
 		//System.out.println(list2.lastIndexOf(40));
