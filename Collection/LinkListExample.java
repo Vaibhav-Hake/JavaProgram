@@ -9,7 +9,14 @@ class UserNoSuchElementException extends RuntimeException{
 		super();
 	}
 }
-class UserLinkedList<E>{
+
+interface UserLinkedList1<E>{
+	void add(E ele);
+	boolean remove(E ele);
+	int size();
+	E getLast();
+}
+class UserLinkedList<E>implements UserLinkedList1<E>{
 	private int index;
 	protected Node<E> head;
 	protected Node<E> tail;
@@ -160,6 +167,33 @@ class UserLinkedList<E>{
 		
 	}
 	
+	public boolean remove(E ele){
+		
+		if(ele.equals(getFirst())){
+			 removeFirst();
+			return true;
+		}
+		if(ele.equals(getLast())){
+			 removeLast();
+			return true;
+		}
+		
+		Node<E> curr1=head;
+		Node<E> curr2=null;
+		while(curr1.next!=null){
+			if(curr1.ele.equals(ele))break;
+			curr2=curr1;
+			curr1=curr1.next;
+		}
+		if(curr1.next==null) return false;
+		curr2.next=curr1.next;
+		curr1.next=null;
+		this.index--;
+		return true;
+		
+		
+	}
+	
 	public void clear(){
 		if(isEmpty()){
 			return;
@@ -260,6 +294,31 @@ class UserLinkedList<E>{
 		}
 		return false;
 	}
+	public  UserLinkedList<E>.Node<E> node (int indx){
+		checkIndex(indx);
+		Node<E>curr=head;
+		for(int i=0;i<indx;i++){
+			curr=curr.next;
+		}
+		return curr;
+	}
+	
+	public Object[] toArray(){
+		if(isEmpty())return new Object[0];
+		Object[]newArr=new Object[this.size()];
+        for(int i=0;i<size();i++){
+			newArr[i]=this.get(i);
+		}
+		return newArr;
+	}
+	
+	public <T> T[] toArray(T[] newArray){
+	if(isEmpty())return newArray;
+        for(int i=0;i<this.size();i++){
+			newArray[i]=(T)this.get(i);
+		}
+		return newArray;
+	}
 	@Override
 	public Object clone()throws CloneNotSupportedException{
 		return super.clone();
@@ -285,7 +344,7 @@ class LinkListExample{
 		list.add(40);
 		System.out.println(list);
 		
-		UserLinkedList list2=new UserLinkedList<>();
+		UserLinkedList1 list2=new UserLinkedList<>();
 		
 		list2.add(10);
 		list2.add(20);
@@ -308,8 +367,8 @@ class LinkListExample{
 		//System.out.println(list2);
 		//list2.add(3,500);
 		//System.out.println(list2.removeFirstOcurrance(30));
-		System.out.println(list2.removeLastOcurrance(30));
-		System.out.println(list2);
+		//System.out.println(list2.removeLastOcurrance(30));
+		System.out.println(list2.remove(30));
 		System.out.println(list2);
 		//System.out.println(list2.lastIndexOf(30));
 		//System.out.println(list2.lastIndexOf(3000));
