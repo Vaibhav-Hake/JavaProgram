@@ -60,12 +60,22 @@ class MyCircularLinkList<E>{
 		}
 		Node<E>newNode=new Node<>(ele);
 		Node<E>curr=head;
-		for(int i=0;i<index;i++){
+		for(int i=0;i<index-1;i++){
 			curr=curr.next;
 		}
 		newNode.next=curr.next;
 		curr.next=newNode;
 		this.index++;
+	}
+	
+	public E removeFirst(){
+		if(isEmpty())
+			throw new NoSuchElementException();
+		E temp=head.ele;
+	    head=head.next;
+		tail=head;
+		this.index--;
+		return temp;
 	}
 	@Override
 	public String toString(){
@@ -97,8 +107,10 @@ class DriverCircularLinkList{
 		System.out.println(list.size());
 		//list.addLast(100);
 		//list.addFirst(1000);
-		list.add(3,1000);
+		//list.add(3,1000);
 		//list.addFirst(1000);
+		
+		System.out.println(list.removeFirst());
 		System.out.println(list);
 		System.out.println(list.size());
 	}
