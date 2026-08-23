@@ -99,7 +99,21 @@ class MyVector<E>{
 		this.arr[index]=ele;
 		return temp;
 	}
-	
+	public E removeElementAt(int index){
+		
+		if(isEmpty()){
+			throw new UserNoSuchElementException();
+		}
+		if(index<0||index>=size())
+			throw new UserIndexOutOfBoundException("jdhbfhjadv");
+		E temp=this.arr[index];
+		for(int i=index+1;i<size();i++){
+			arr[i-1]=arr[i];
+		}
+		this.index--;
+		return temp;
+		
+	}
 	@Override
 	public String toString(){
 		if(isEmpty())return "[]";
@@ -129,7 +143,8 @@ class VectorImplementation{
 		System.out.println(list);
 		System.out.println(list.size());
 		
-		System.out.println(list.setElement(1,1));
+		//System.out.println(list.setElement(1,1));
+		System.out.println(list.removeElementAt(1));
 		System.out.println(list);
 		System.out.println(list.size());
 	}

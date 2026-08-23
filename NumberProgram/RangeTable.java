@@ -7,6 +7,7 @@ class RangeTable{
 		System.out.println("Enter Endinging number");
 		int end=sc.nextInt();
 		for(int i=s;i<=end;i++){
+			+
 			table(i);
 			
 		}

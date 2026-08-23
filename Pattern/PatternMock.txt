@@ -1,1 +1,2 @@
-class PatternMock
+class PatternMock{
+}
