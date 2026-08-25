@@ -9,7 +9,7 @@ class  UserIndexOutOfBoundException extends RuntimeException{
 		super(desc);
 	}
 }
-class MyVector<E>{
+class MyVector<E >{
 	private E[] arr;
 	private int index;
 	public final int INITIAL_CAPACITY = 10;
