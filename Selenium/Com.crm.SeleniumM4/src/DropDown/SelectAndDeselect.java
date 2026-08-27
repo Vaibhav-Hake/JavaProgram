@@ -21,15 +21,32 @@ public static void main(String[] args) throws InterruptedException {
 	Thread.sleep(2000);
 	sell1.selectByIndex(5);
 	Thread.sleep(2000);
+	
+	//desect single 
+	sell1.deselectByIndex(5);
+	
 	//Multiple select
 	WebElement mul = d.findElement(By.id("multiple_cars"));
 	Select sell2=new Select(mul);
 	sell2.selectByVisibleText("BMW");
 	Thread.sleep(2000);
-	sell2.selectByValue("lr");
+	sell2.selectByValue("aud");
 	Thread.sleep(2000);
-	sell2.selectByIndex(5);
+	sell2.selectByIndex(3);
 	Thread.sleep(2000);
+	
+	//deselct multiple select
+//	sell2.deselectByVisibleText("BMW");
+//	Thread.sleep(2000);
+//	sell2.deselectByValue("aud");
+//	Thread.sleep(2000);
+//	sell2.deselectByIndex(3);
+//	Thread.sleep(2000);
+	
+	//desect All
+//	sell2.deselectAll();
+	
+
 	
 }
 }
