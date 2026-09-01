@@ -21,6 +21,6 @@ public static void main(String[] args) throws InterruptedException, AWTException
 	Thread.sleep(1000);
 	bot.keyPress(KeyEvent.VK_ENTER);
 	Thread.sleep(3000);
-	d.close();
+	d.quit();
 }
 }
