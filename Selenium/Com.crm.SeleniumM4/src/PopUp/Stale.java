@@ -25,5 +25,7 @@ public static void main(String[] args) throws InterruptedException {
 		s.selectByIndex(i++);
 		Thread.sleep(1000);
 	}
+	Thread.sleep(2000);
+	d.quit();d
 }
 }
