@@ -26,6 +26,6 @@ public static void main(String[] args) throws InterruptedException {
 		Thread.sleep(1000);
 	}
 	Thread.sleep(2000);
-	d.quit();d
+	d.quit();
 }
 }
